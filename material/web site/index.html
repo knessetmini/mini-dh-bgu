@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" charset= "utf-8"content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+<link rel="stylesheet" href="style.css">    
+<script type="text/javascript" 
+	    src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript">
+        function initViz() {
+            console.log("test");
+			
+            var containerDiv = document.getElementById("vizContainer"),
+               // url = "http://public.tableau.com/views/RegionalSampleWorkbook/Storms",
+				url = "https://public.tableau.com/views/edu_9/Sheet1?:embed=y&:display_count=yes",
+                options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+            
+            var viz = new tableau.Viz(containerDiv, url, options); 
+            // Create a viz object and embed it in the container div.
+        }
+    </script>     
+</head>
+<body>
+	<div id="header">
+		<div id="strip">
+			<div class= "column3">
+				<img src="img/bgu.png" alt="bgu" style="height:200px ; width:300px;">
+			</div>
+			
+			<div class= "column3"  >
+				<p style="font-size: 35px;">
+					<span style="font-size: 35px;">כנסת מפולגת</span><br>
+					<span style="font-size: 25px;">אנליזה דמוגרפית של חברי הכנסת לאורך שנות פעילותה</span><br>
+				</p>
+				<p>
+					<span style="font-size: 15px;">פרוייקט במדעי הרוח הדיגיטליים</span><br>
+					<span style="font-size: 12px;">בהנחיית: ד"ר יעל נצר</span><br>
+				</p>
+			</div>
+			
+			<div class= "column3 left">
+				<img src="img/knesset.jpeg" alt="knesset" style="height:200px ; width:250px; ">
+			</div>
+		</div>
+	</div>
+
+	<div id="menu">
+		<div class="tab">	  
+	  <button class="tablinks" onclick="openCity(event, 'home')" id="defaultOpen">דף הבית</button>
+  	  <button class="tablinks" onclick="openCity(event, 'categories')">ממצאים</button>
+  	  <button class="tablinks" onclick="openCity(event, 'programing')">תהליך הפיתוח</button>
+  	  <button class="tablinks" onclick="openCity(event, 'contact')"> צור קשר</button>
+	</div>
+	
+		<div id="contact" class="tabcontent">
+	  <h3>צור קשר</h3>
+	  <p style="padding: 30px;">נשמח אם תצרו קשר איתנו במקרה של בעיה/שאלה/הארה:</p>
+	  <p><strong>תמנע דה ליאו:</strong> timna@post.bgu.ac.il</p>
+	  <p><strong>דולב סקלי:</strong> dolevsek@post.bgu.ac.il</p>
+	  
+	  
+	</div>
+	
+		<div id="programing" class="tabcontent">
+	 	<h2 style="text-align: center;">תהליך הפיתוח</h3>
+	  	  <p style="padding: 30px; line-height:1.6;">את הפרוייקט בנינו בשלבים: <br>
+תחילה, אספנו את כל הנתונים שאנו צריכים - <br>קיבלנו קבצים אקסל מהמרצה שלנו, ד"ר יעל נצר,<br>
+ ובנוסף, כתבנו מספר סקריפטים בשפה פייתון שאמצעותם אספנו מידע נוסף שעניין אותנו מאתר הכנסת<br>
+
+ניתן למצוא את כל האקסלים, והסקריפטים המדוברים בתקיית github של הפרוייקט בלינק שמצורף למטה<br>
+<br>
+לאחר איסוף הנתונים, ערכנו ועיבדנו אותם באמצעות התוכנת OpenRefine<br >
+ניקינו את הנתונים ממידע עודף ואיחדנו נתונים וטבלאות.<br>
+<br>
+בשלב השלישי, יצרנו את הגרפים של המידע<br>
+יצרנו אותם בעזרת התוכנה Google-fusion<br>
+חיפשנו את הגרפים באמצעותם ניתן לראות את התוצאות בצורה הטובה ביותר<br>
+<br>
+בשלב האחרון, בנינו את האתר שיציג את הממצאים שלנו.<br>
+אתר זה נבנה ב HTML, CSS,  JS<br>
+את הקוד של האתר ניתן למצוא גם כן ב github המצורף.<br>
+<br>
+נהנינו לעבוד על הפרוייקט ולמדנו המון מידע מעניין מהממצאים, ומקוות שגם אתם!<br></p>
+
+<a style="padding: 30px;" href="https://github.com/knessetmini/mini-dh-bgu"> <strong>לינק ל- github של הפרוייקט</strong> </a>
+
+	</div>
+
+		<div id="categories" class="tabcontent" >
+			<p> להלן הממצאים אשר מצאנו, בכדי לעבור בין קטגוריות, יש לבחור את שם הקטגוריה הרצוייה ברשימת הקטגוריות שבצד ימין:</p>
+	  	  	<h4>בחר קטגוריה:</h4>
+		  	<div class="tab-cat">	  
+		  	 	  <button class="tablinksCat" onclick="openCat(event, 'gender')" id="defaultOpenCat">מגדר</button>
+			  	  <button class="tablinksCat" onclick="openCat(event, 'languages')">שפות</button>
+		    	  <button class="tablinksCat" onclick="openCat(event, 'elected_age')">גיל</button>
+		    	  <button class="tablinksCat" onclick="openCat(event, 'education')" >השכלה </button>
+		    	  <button class="tablinksCat" onclick="openCat(event, 'birth_country')">יבשת לידה </button>
+		    	  <button class="tablinksCat" onclick="openCat(event, 'birth_place')">עיר לידה </button>	  
+		    	  <button class="tablinksCat" onclick="openCat(event, 'district')">מחוז מגורים </button>
+		  	</div> 
+			<div id="gender" class="tabcontentCat">
+					<h3> מגדר</h3>
+					<p>הגרף הנ"ל מציג את כמות הנשים מול כמות הגברים בכנסות לאורך השנים. <br>	בנוסף, ניתן לראות את נתונים הדמוגרפיים של האכלוסייה הכללית באותן השנים: 					</p>
+					<div id="genderURL"></div>
+
+					
+			</div>
+			<div id="languages" class="tabcontentCat">
+					<h3> שפות</h3>
+					<p>הגרף הנ"ל מציג את השינוי בשפות שחברי הכנסת דוברים לאורך השנים:</p>
+
+					<div id="languagesURL"></div>
+					<br>
+					
+					<p style="padding-top:50px" > הגרף הנ"ל מציג את כל חברי הכנסת לדורותיהם ואת השפות אותם דיברו מלבד אנגלית ועברית:</p>					
+					<div id="languagesURL1" style="padding-right:100px; padding-bottom:100px"></div>
+					
+					
+			</div>
+			<div id="elected_age" class="tabcontentCat">
+					<h3> גיל</h3>
+					<p> הגרף הנ"ל מציג את אחוז גילאי הבחירה של חברי הכנסת לפי כנסות וקטגוריות גיל. <br> בסמוך לכל כנסת, מוצג המידע עבור האוכלוסייה הכוללת באותה תקופה:</p>				
+				    <div id="ageURL"></div>   
+					
+					<p> <strong>הערה - </strong>הקטגוריות של הגילאים נבחרו על פי הקטגוריות הקיימות בהלמ"ס</p>
+					 
+					
+			</div>
+			<div id="education" class="tabcontentCat">
+					<h3> השכלה</h3>
+					<p> הגרף הנ"ל מציג את ההשכלה של חברי הכנסת לאורך השנים:</p>
+				    <div id="vizContainer"></div>    
+					
+					<p>גרסה מפורטת יותר של הגרף ניתן למצוא 
+						<a style="padding: 2px;" href="https://public.tableau.com/views/edu_9/Sheet1?:embed=y&:display_count=yes"> כאן</a>	
+					</p>
+					
+							
+					
+			</div>
+			<div id="birth_country" class="tabcontentCat">
+					<h3> יבשת לידה</h3>
+					<p> הגרפים הנ"ל מציגים את אחוז האכולוסייה שנולדה ביבשת מסויימת לעומת אחוז חברי הכנסת שנולדו בה גם כן:</p>
+				    <div id="countryURL1"></div>  
+				    <div id="countryURL2"></div>    
+				    <div id="countryURL3"></div>    
+				    <div id="countryURL4"></div>  
+					<p> <strong>הערה - </strong>היבשות נבחרו על פי המידע הקיים בהלמ"ס</p>
+					  
+					
+					  
+					
+				</div>
+			<div id="birth_place" class="tabcontentCat">
+					<h3> עיר לידה</h3>
+					<p> המפה הנ"ל מציגה את ערי הלידה של חברי הכנסת:</p>
+					<div id="birth_placeURL"></div>
+			</div>
+			<div id="district" class="tabcontentCat">
+					<h3> מחוז מגורים</h3>
+					<p> הגרפים הנ"ל מציגים את אחוז האכולוסייה שמתגוררת במחוזות השונים באר לעומת אחוז חברי הכנסת (האחרונה בלבד) שנולדו בה:</p>
+					<div id="districtURL"></div>
+					<p> <strong>הערה - </strong>המחוזות נבחרו על פי הקטגוריות הקיימות בהלמ"ס</p>
+					
+			</div>
+		</div>
+			
+		<div id="home" class="tabcontent">
+	 		<h2 style="text-align: center;">על הפרוייקט</h3>
+	  	  	<div id= "home-box">
+				<div id="home-right">
+			<p style="padding: 30px;">
+הכנסת היא בית המחוקקים והנבחרים של מדינת ישראל<br> ומכך שבישראל שיטת הממשל היא דמוקרטית פרלמנטרית, בוחרים אזרחי המדינה את נציגיהם בכנסת.
+<br><br>
+ מטרת הפרוייקט היא לבדוק האם חברי הכנסת אכן מייצגים <br>את האזרחים על פי חתכים דמוגרפיים שונים,<br> וכן לראות כיצד השתנו המאפיינים של חברי הכנסת לאורך השנים.
+ <br> <br>
+המידע המוצג באתר מתבסס בעיקרו על אתר הכנסת <br>ונתונים מהלשכה המרכזית לסטטיסטיקה.<br>
+<strong>
+פרוייקט זה נעשה במסגרת קורס "מדעי הרוח הדיגיטליים" בהנחיית ד"ר יעל נצר באוניברסיטת בן גוריון בנגב.<br>
+</strong>
+</p>
+</div>
+				<div id="home-left">
+				<img src="img/kness.jpg" alt="knesset" style="height:400px ; width:450px; ">
+</div>
+		</div>
+	</div>
+<script>
+	function openCity(evt, cityName) {
+	    var i, tabcontent, tablinks;
+	    tabcontent = document.getElementsByClassName("tabcontent");
+	    for (i = 0; i < tabcontent.length; i++) {
+	        tabcontent[i].style.display = "none";
+	    }
+	    tablinks = document.getElementsByClassName("tablinks");
+	    for (i = 0; i < tablinks.length; i++) {
+	        tablinks[i].className = tablinks[i].className.replace(" active", "");
+	    }
+	    document.getElementById(cityName).style.display = "block";
+	    evt.currentTarget.className += " active";
+	}
+
+	function openCat(evt, cityName) {
+	    var i, tabcontent, tablinks;
+	    tabcontent = document.getElementsByClassName("tabcontentCat");
+	    for (i = 0; i < tabcontent.length; i++) {
+	        tabcontent[i].style.display = "none";
+	    }
+	    tablinks = document.getElementsByClassName("tablinksCat");
+	    for (i = 0; i < tablinks.length; i++) {
+	        tablinks[i].className = tablinks[i].className.replace(" active", "");
+	    }
+	    document.getElementById(cityName).style.display = "block";
+	    evt.currentTarget.className += " active";
+	}
+
+
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+	document.getElementById("defaultOpenCat").click();
+
+    
+    
+	
+</script>
+<script src="script.js"></script>        
+     
+</body>
+</html> 
